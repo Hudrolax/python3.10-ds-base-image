@@ -11,11 +11,12 @@ RUN apk add --no-cache --virtual .build-deps \
     libc-dev \
     libffi-dev \
     openssl-dev \
-    libstdc++ \
     make && \
+    apk add --no-cache libstdc++ && \
     python -m venv /py && \
     /py/bin/pip install --upgrade pip && \
     /py/bin/pip install --no-cache-dir -r requirements.txt && \
-    rm requirements.txt 
+    rm requirements.txt && \
+    apk del .build-deps
 
 ENV PATH=":/py/bin:$PATH"

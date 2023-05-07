@@ -1,2 +1,2 @@
 # python3.10-ds-base-image
-Base image for containers requiring pandas, numpy
+Base python3.10-alpine image for containers requiring pandas, numpy requirements
